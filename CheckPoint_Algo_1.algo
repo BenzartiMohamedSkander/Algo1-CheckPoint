@@ -1,0 +1,34 @@
+ALGORITHM algorithm_sentence
+VAR
+   myChar :CHAR;
+    countVowels,countWords,chLength: INTEGER := 0 ;
+  
+
+BEGIN
+
+REPEAT
+    Write("enter your sentence character by character")
+    Read(myChar);
+    chLength:= chLength + 1;
+
+  IF (myChar = ' ') THEN
+      countWords := countWords + 1;
+  END_IF
+
+SWITCH (myChar) DO
+    case 'o' : countVowels := countVowels +1;BREAK;
+    case 'i' : countVowels := countVowels +1;BREAK;
+    case 'e' : countVowels := countVowels +1;BREAK;
+    case 'a' : countVowels := countVowels +1;BREAK;
+    case 'u' : countVowels := countVowels +1;BREAK;
+    case 'y' : countVowels := countVowels +1;BREAK;
+ 
+END_SWITCH
+
+    
+UNTIL (myChar == ".")
+ Write("The length of the sentence", chLength)
+  Write("The number of words in the sentence", countWords + 1)
+   Write("The number of vowels in the sentence", countVowels)
+
+END
